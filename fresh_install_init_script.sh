@@ -61,9 +61,10 @@ Host *
  AddKeysToAgent yes
  UseKeychain yes
  IdentityFile ~/.ssh/id_rsa
-
- ssh-add -K ~/.ssh/id_rsa
 EOL
+
+ssh-add -K ~/.ssh/id_rsa
+
 # << git stuff.
 
 # Discover all the Java's we setup with brew.
