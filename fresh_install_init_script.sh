@@ -58,7 +58,7 @@ git config --global user.name $USER
 git config --global user.email $EMAIL
 
 ## Make unprompted
-sh-keygen -t rsa -b 4096 -C $EMAIL
+ssh-keygen -t rsa -b 4096 -C $EMAIL
 eval "$(ssh-agent -s)"
 
 ## Add to git config `~/.ssh/config`
