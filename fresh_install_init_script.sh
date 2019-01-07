@@ -27,13 +27,7 @@ brew tap Yleisradio/terraforms
 brew install git tmux htop vim zsh wget jq jenv rbenv xmlsectool blackbox gnupg terraform chtf pre-commit cfssl
 
 # Install desktop apps.
-brew cask install slack sublime-text postman iterm2 gimp whatsapp spotify intellij-idea-ce rubymine docker firefox java java8 spectacle aws-vault shades
-
-# Change the shell.
-chsh -s /bin/zsh
-
-# Oh my zsh setup.
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+brew cask install slack sublime-text postman iterm2 gimp whatsapp spotify intellij-idea-ce rubymine docker firefox java java8 spectacle aws-vault shade
 
 # Iterm2
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
@@ -129,6 +123,12 @@ defaults write "com.apple.systemuiserver" menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 "/System/Library/CoreServices/Menu Extras/Volume.menu"
 # <<
+
+# Change the shell.
+chsh -s /bin/zsh
+
+# Oh my zsh setup.
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Sort theses out. Along with docker setup, sort finder out remove extra stuff.
 echo "Now go set the screen resolution, keyboard layout, and wallpaper by hand."
