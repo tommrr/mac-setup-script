@@ -25,7 +25,7 @@ brew tap Yleisradio/terraforms
 brew cask install slack intellij-idea-ce rubymine docker firefox java java8 aws-vault
 
 # Install command line stuff.
-brew install git vim wget jq jenv rbenv blackbox gnupg terraform chtf pre-commit cfssl xmlsectool
+brew install git vim wget jq jenv rbenv blackbox gnupg terraform chtf pre-commit cfssl xmlsectool md5sha1sum cloudfoundry/tap/cf-cli
 
 # Ruby >>
 rbenv init
@@ -76,7 +76,7 @@ chtf 0.11.7
 sed -i -e 's/2048/8196/g' ~/Library/Group\ Containers/group.com.docker/settings.json
 
 ## --> Tom Specific
-if [ -z "$3" ] && [ $3 == '--tom']; then
+if [ -n "$3" ] && [ $3 == '--tom']; then
 
 	## Programatically set parameters for macos
 	defaults write "Apple Global Domain" com.apple.keyboard.fnState -bool true # Switch the fn keys back to function keys.

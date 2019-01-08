@@ -99,6 +99,19 @@ function sshaws() {
 	ssh -i ~/ssh.pem ubuntu@$1
 }
 
+function loadenv() {
+	set -a
+	source $1
+	set +a
+}
+
+function indexjava() {
+	# Discover all the Java's we setup with brew.
+	for f in $(ls /Library/Java/JavaVirtualMachines/); do
+		jenv add "/Library/Java/JavaVirtualMachines/$f/Contents/Home"
+	done
+}
+
 export AWS_PROFILE=admin-eidas-prod
 
 #Aliases
@@ -107,6 +120,10 @@ alias code="cd ~/Documents/code"
 alias editrc="vim ~/.zshrc"
 alias sensors="iStats"
 alias docker_purge="docker system prune --all"
+alias clr="clear"
+alias cls="clear"
+alias k8dash="minikube dashboard &"
+alias clear_gradle_caches="rm -rf ~/.gradle/caches"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -119,3 +136,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
+
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
